@@ -1,0 +1,38 @@
+<section id="projects" class="container work-section">
+    <div class="col-span-12 header-row">
+        <h2>Strategic <span>Implementations</span></h2>
+        <span class="meta-label">Selected Project Archive</span>
+    </div>
+
+    <!-- Catalogue List View -->
+    <div class="col-span-12 project-item" *ngFor="let project of projects">
+        <div class="project-header">
+            <div class="project-title-group">
+                <div class="p-accent"></div>
+                <div class="title-meta">
+                    <h3 class="project-title-text">{{ project.title }}</h3>
+                    <span class="project-subtitle-text">{{ project.subtitle }}</span>
+                </div>
+            </div>
+            <div class="project-tags">
+                <span class="tag" *ngFor="let t of project.tech">{{ t }}</span>
+            </div>
+        </div>
+
+        <div class="project-body">
+            <div class="project-desc-col">
+                <p class="project-desc-text">{{ project.description[0] }}</p>
+                <div class="bullet-grid">
+                    <div class="bullet-item" *ngFor="let bullet of project.description.slice(1)">
+                        <span>{{ bullet }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-cta-col">
+                <button class="icon-btn" (click)="openLink(project.link)">
+                    Explore <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

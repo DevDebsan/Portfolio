@@ -1,0 +1,188 @@
+\documentclass[a4paper,10pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage[left=0.5in,top=0.5in,right=0.5in,bottom=0.5in]{geometry} % Minimized margins
+\usepackage{helvet} % Helvetica font, looks cleaner/modern
+\renewcommand{\familydefault}{\sfdefault} % Set default font family to sans-serif
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor} % For custom colors
+\usepackage{hyperref} % For links
+\usepackage{fontawesome5} % For icons
+\usepackage{titlesec} % For section formatting
+\usepackage{enumitem} % For list formatting
+\usepackage{tabularx} % For flexible tables
+\usepackage{ragged2e} % For text alignment
+
+%----------------------------------------------------------------------------------------
+%	COLOR PALETTE (Premium Deep Blue & Gold/Grey)
+%----------------------------------------------------------------------------------------
+% Primary Theme Color: Deep Royal Navy
+\definecolor{primary}{RGB}{10, 30, 60} 
+% Accent Color: Muted Gold or Electric Blue (Using a sophisticated Slate Blue here)
+\definecolor{accent}{RGB}{40, 90, 140}
+% Text Colors
+\definecolor{darktext}{RGB}{30, 30, 30}
+\definecolor{lighttext}{RGB}{80, 80, 80}
+\definecolor{linkcolor}{RGB}{0, 80, 160}
+
+%----------------------------------------------------------------------------------------
+%	CUSTOM COMMANDS & STYLING
+%----------------------------------------------------------------------------------------
+
+% Links
+\hypersetup{
+    colorlinks=true,
+    linkcolor=linkcolor,
+    filecolor=linkcolor,      
+    urlcolor=linkcolor,
+}
+
+% Header Name Style
+\newcommand{\headername}[1]{
+    {\Huge\bfseries\color{primary} #1}
+}
+
+% Section Headings
+\titleformat{\section}
+    {\Large\bfseries\color{primary}\uppercase} % Format
+    {} % Label
+    {0em} % Sep
+    {} % Before-code
+    [\titlerule] % After-code (Horizontal line)
+
+% Subsection Headings (e.g. Job Titles)
+\newcommand{\role}[2]{
+    {\large\bfseries\color{darktext} #1} \hfill {\color{accent}\textbf{#2}}
+}
+
+% Company/Institution Name
+\newcommand{\employer}[2]{
+    {\color{lighttext}\textit{#1}} \hfill {\color{lighttext}\textit{#2}}
+}
+
+% Custom Bullet Points
+\renewcommand\labelitemi{\color{accent}\small$\bullet$}
+
+% Tighten lists
+\setlist[itemize]{leftmargin=*, noitemsep, topsep=0pt, partopsep=0pt, parsep=2pt}
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONTENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+%--- HEADER ---
+\begin{center}
+    \headername{Debdeep Sanyal} \\ \vspace{0.2em}
+    {\color{accent}\large Android \& AI/ML Engineer} \\ \vspace{0.5em}
+    
+    \small
+    \faPhone\ +91 7044692859 \quad
+    \faMapMarker*\ Kolkata, India \quad
+    \faEnvelope\ \href{mailto:sanyaldebdeep@gmail.com}{sanyaldebdeep@gmail.com} \\ \vspace{0.3em}
+    \faLinkedin\ \href{https://www.linkedin.com/in/debdeep-sanyal-4a38901b2/}{LinkedIn Profile} \quad
+    \faGithub\ \href{https://devdebsan.github.io/Portfolio/}{Portfolio}
+\end{center}
+
+\vspace{-1em}
+
+%--- OBJECTIVE ---
+\section*{Objective}
+\vspace{-0.5em}
+Android and AI/ML Engineer with \textbf{3 years of experience} building production Android systems and computer vision solutions. Experienced in real-time video analytics, model integration, and edge deployment, with a focus on scalable and reliable products.
+
+%--- SKILLS ---
+\section*{Technical Skills}
+\vspace{-0.5em}
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+    \textbf{\color{accent}Programming} & Kotlin, Java, Python, XML \\
+    \textbf{\color{accent}Android Engineering} & Android SDK, Jetpack Compose, MVVM, RESTful APIs, SQLite, Firebase \\
+    \textbf{\color{accent}Computer Vision} & OpenCV, ML Kit, TrackNet, InsightFace, DeepFace \\
+    \textbf{\color{accent}Deep Learning} & CNN-based models, Object Detection/Tracking, Face Recognition \\
+    \textbf{\color{accent}Models \& Architecture} & LSTM, BiLSTM, Transformer-based architectures \\
+    \textbf{\color{accent}Training \& Optimization} & PyTorch, ONNX, TensorFlow Lite, CoreML, Quantization, Edge Deployment \\
+    \textbf{\color{accent}Video Processing} & RTSP pipelines, GStreamer, FFmpeg, GPU-accelerated inference \\
+    \textbf{\color{accent}Tools \& Systems} & Android Studio, Git, Google Cloud Console, Multithreading, Performance Tuning \\
+\end{tabularx}
+
+%--- EXPERIENCE ---
+\section*{Professional Experience}
+\vspace{-0.5em}
+
+\role{Android \& AI/ML Engineer}{Feb 2022 – Present} \\
+\employer{Vareli Tecnac Pvt. Ltd.}{Kolkata, India}
+\begin{itemize}
+    \item \textbf{Production Ownership:} Took ownership of multiple production mobile products, handling development, release, and post-deployment stability.
+    \item \textbf{Scalable Architecture:} Designed scalable workflows focusing on performance, reliability, and user experience.
+    \item \textbf{Real-Time Systems:} Integrated real-time data and media streams into applications, ensuring low latency in live environments.
+    \item \textbf{ML Integration:} Collaborated with ML teams to integrate inference outputs into user-facing features, focusing on on-device processing and performance tuning.
+    \item \textbf{Cross-Functional Leadership:} Coordinated with backend, QA, and hardware teams to deliver end-to-end production systems.
+\end{itemize}
+
+%--- PROJECTS ---
+\section*{Key Projects}
+\vspace{-0.5em}
+
+\role{Play–Pause–Post (PPP): AI Sports Replay \& Analytics Platform}{Production}
+\begin{itemize}
+    \item \textbf{Real-Time Tracking:} Implemented live ball and shuttle tracking (TrackNet, 90\%+ accuracy) with continuous model tuning.
+    \item \textbf{Computer Vision features:} Built court keypoint detection for localization and an automated line-calling system using bounce location geometry.
+    \item \textbf{Optimization:} Optimized inference pipelines for \textbf{iOS/CoreML and GPU execution} to support low-latency replays.
+    \item \textbf{Smart Watch Integration:} Extended line-calling and replay insights to an Android Watch app for real-time officiating.
+    \item \textit{Tech:} TrackNet, Roboflow, CoreML, Android Watch, Geometric Mapping. \href{https://play.google.com/store/apps/details?id=com.vtpl.volley}{(Play Store Link)}
+\end{itemize}
+\vspace{0.3em}
+
+\role{CCTV-Based Face Recognition \& Attendance Analytics}{Surveillance System}
+\begin{itemize}
+    \item \textbf{Custom ML Models:} Implemented custom face recognition trained on InsightFace/DeepFace backbones.
+    \item \textbf{Pipeline Engineering:} Built reliable video ingestion using \textbf{GStreamer and RTSP}, automating attendance across multiple streams.
+    \item \textbf{Analytics:} Generated heatmaps, headcounts, and time-based insights, improving robustness against occlusion and lighting changes.
+\end{itemize}
+\vspace{0.3em}
+
+\role{V-Commute}{Enterprise Android Platform}
+\begin{itemize}
+    \item \textbf{Smart Tracking:} Implemented geofenced real-time commute tracking and dynamic Travel Allowance (TA) calculation.
+    \item \textbf{Secure Auth:} Integrated biometric and face-based authentication (\textbf{99\%+ accuracy}) with anti-spoofing and offline support using a lightweight on-device model.
+    \item \textbf{Financial Logic:} Designed automatic price management with hierarchy-wise approval workflows. \href{https://play.google.com/store/apps/details?id=com.vcommute.traveltracking}{(Play Store Link)}
+\end{itemize}
+\vspace{0.3em}
+
+\role{V-Fleet}{Fleet Operations Platform}
+\begin{itemize}
+    \item \textbf{Offline-First:} Built an architecture supporting uninterrupted operations in low-network regions.
+    \item \textbf{Real-Time Ops:} Enabled vehicle status tracking, trip synchronization, and operational insights. \href{https://play.google.com/store/apps/details?id=com.vareli.fleet}{(Play Store Link)}
+\end{itemize}
+\vspace{0.3em}
+
+\role{V-Asset}{Asset Lifecycle Management}
+\begin{itemize}
+    \item \textbf{Security & Scanning:} Implemented JWT-based auth with RBAC and integrated QR/barcode scanning via ML Kit.
+    \item \textbf{Compliance:} Implemented audit trails and asset history tracking. \href{https://play.google.com/store/apps/details?id=com.asset.assetmanagementproj}{(Play Store Link)}
+\end{itemize}
+\vspace{0.3em}
+
+\role{iCan}{Accessibility App for Deaf Users}
+\begin{itemize}
+    \item \textbf{Inclusive Design:} Built sign-language video workflows and integrated speech-to-text/text-to-speech for two-way communication.
+    \item \textbf{Education:} Designed assignment submission workflows to track learning progress.
+    \item \textbf{Leadership:} Led a cross-functional team of 4 developers from design to delivery. \href{https://play.google.com/store/apps/details?id=com.vtpl.challenged}{(Play Store Link)}
+\end{itemize}
+
+%--- EDUCATION ---
+\section*{Education}
+\vspace{-0.5em}
+
+\role{Master of Technology (M.Tech) in Computer Technology (AI \& DS)}{2024 – Present} \\
+\employer{Jadavpur University}{Kolkata, India}
+
+\vspace{0.3em}
+
+\role{Bachelor of Technology (B.Tech) in CSE}{2019 – 2023} \\
+\employer{I.K. Gujral Punjab Technical University}{Punjab, India}
+
+\end{document}

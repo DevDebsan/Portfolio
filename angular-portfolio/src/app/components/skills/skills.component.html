@@ -1,0 +1,13 @@
+<section id="skills" class="container proof-section bg-light">
+    <div class="col-span-12 header-row">
+        <h2>Expertise <span>Matrix</span></h2>
+        <span class="meta-label">Domain Specialization</span>
+    </div>
+
+    <div class="col-span-3 skill-block" *ngFor="let item of capabilities">
+        <h3 class="skill-category">{{ item.category }}</h3>
+        <ul class="skill-list">
+            <li *ngFor="let skill of item.skills">{{ skill }}</li>
+        </ul>
+    </div>
+</section>

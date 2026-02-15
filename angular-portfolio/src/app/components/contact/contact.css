@@ -1,0 +1,127 @@
+.footer-section {
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+}
+
+.section-header h2 span {
+    color: var(--accent);
+}
+
+.ed-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.ed-item h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+}
+
+.ed-meta {
+    font-size: 0.9rem;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.experience-summary {
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.exp-bullets {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.exp-bullets li {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.exp-bullets li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+.contact-sidebar {
+    border-left: 1px solid var(--border-color);
+    padding-left: 2rem;
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.c-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--text-secondary);
+    margin-bottom: 0.3rem;
+}
+
+.c-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a.c-value:hover {
+    color: var(--accent);
+}
+
+.footer-bottom {
+    margin-top: 5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-icons a {
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--accent);
+}
+
+@media (max-width: 1024px) {
+    .contact-sidebar {
+        border-left: none;
+        padding-left: 0;
+        margin-top: 4rem;
+    }
+}
