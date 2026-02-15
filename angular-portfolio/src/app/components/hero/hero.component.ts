@@ -20,7 +20,7 @@ export class HeroComponent implements AfterViewInit {
     }
 
     openResume() {
-        window.open('./assets/resume.pdf', '_blank');
+        window.open('./assets/cv.pdf', '_blank');
     }
 
     scrollToContact() {
