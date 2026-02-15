@@ -14,6 +14,19 @@
                     <span class="project-subtitle-text">{{ project.subtitle }}</span>
                 </div>
             </div>
+
+            <div class="project-preview-small" [ngClass]="project.assetClass">
+                <div class="glow-sphere"></div>
+                <i class="fas" [ngClass]="{
+                    'fa-table-tennis': project.assetClass === 'asset-ppp',
+                    'fa-calendar-check': project.assetClass === 'asset-event',
+                    'fa-bus': project.assetClass === 'asset-commute',
+                    'fa-truck': project.assetClass === 'asset-fleet',
+                    'fa-boxes': project.assetClass === 'asset-vasset',
+                    'fa-sign-language': project.assetClass === 'asset-ican'
+                }"></i>
+            </div>
+
             <div class="project-tags">
                 <span class="tag" *ngFor="let t of project.tech">{{ t }}</span>
             </div>

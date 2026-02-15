@@ -57,7 +57,7 @@ export class ProjectsComponent {
             ],
             tech: ['Offline-first', 'Data Sync', 'Fleet Management', 'Android'],
             link: 'https://play.google.com/store/apps/details?id=com.vareli.fleet&hl=en',
-            assetClass: 'asset-commute'
+            assetClass: 'asset-fleet'
         },
         {
             title: 'Event Management',
@@ -70,7 +70,7 @@ export class ProjectsComponent {
             ],
             tech: ['Event Tech', 'QR Systems', 'Real-time Sync', 'Android'],
             link: 'https://play.google.com/store/apps/details?id=com.vareli.v_event_management&hl=en',
-            assetClass: 'asset-cctv'
+            assetClass: 'asset-event'
         },
         {
             title: 'V-Asset',
@@ -82,8 +82,8 @@ export class ProjectsComponent {
                 'JWT-based authentication with role-based access control.'
             ],
             tech: ['ML Kit', 'QR/Barcode', 'JWT', 'Inventory'],
-            link: 'https://play.google.com/store/apps/details?id=com.asset.assetmanagementproj&hl=en',
-            assetClass: 'asset-ppp'
+            link: 'https://play.google.com/store/apps/details?id=com.vareli.vasset',
+            assetClass: 'asset-vasset'
         },
         {
             title: 'iCan',
@@ -94,7 +94,7 @@ export class ProjectsComponent {
                 'Led a cross-functional team of 4 developers from design through delivery.'
             ],
             tech: ['Accessibility', 'STT/TTS', 'Sign Language', 'Media'],
-            link: 'https://play.google.com/store/apps/details?id=com.vtpl.challenged&hl=en',
+            link: 'https://play.google.com/store/apps/details?id=com.ican.app',
             assetClass: 'asset-ican'
         }
     ];

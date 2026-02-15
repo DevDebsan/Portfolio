@@ -113,6 +113,79 @@
     color: var(--accent);
 }
 
+/* New Lighting and Preview Styles */
+.project-preview-small {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    margin-right: -2rem;
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+
+.project-item:hover .project-preview-small {
+    transform: scale(1.1) rotate(5deg);
+    border-color: var(--accent);
+    background: rgba(212, 175, 55, 0.05);
+}
+
+.project-preview-small i {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    z-index: 2;
+    transition: color 0.3s;
+}
+
+.project-item:hover .project-preview-small i {
+    color: var(--accent);
+}
+
+.glow-sphere {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.project-item:hover .glow-sphere {
+    opacity: 1;
+}
+
+/* Specific Visibility fixes for V-Asset and iCan */
+.asset-vasset .glow-sphere {
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.4) 0%, transparent 80%);
+}
+
+.asset-vasset i {
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
+}
+
+.asset-ican .glow-sphere {
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 80%);
+}
+
+.asset-ican i {
+    color: var(--text-primary);
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.4));
+}
+
+/* Ensure these are visible in light settings */
+.project-preview-small::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+    pointer-events: none;
+}
+
 @media (max-width: 768px) {
     .bullet-grid {
         grid-template-columns: 1fr;
