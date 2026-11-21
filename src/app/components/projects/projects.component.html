@@ -1,22 +1,12 @@
 <section id="projects" class="container work-section">
-    <div class="col-span-12 header-row">
-        <h2>Strategic <span>Implementations</span></h2>
-        <span class="meta-label">Selected Project Archive</span>
+    <div class="section-heading">
+        <span class="eyebrow">Work</span>
+        <h2>Selected projects.</h2>
     </div>
 
-    <!-- Catalogue List View -->
-    <div class="col-span-12 project-item" *ngFor="let project of projects">
-        <div class="project-header">
-            <div class="project-title-group">
-                <div class="p-accent"></div>
-                <div class="title-meta">
-                    <h3 class="project-title-text">{{ project.title }}</h3>
-                    <span class="project-subtitle-text">{{ project.subtitle }}</span>
-                </div>
-            </div>
-
-            <div class="project-preview-small" [ngClass]="project.assetClass">
-                <div class="glow-sphere"></div>
+    <div class="project-grid">
+        <article class="project-item" *ngFor="let project of projects">
+            <div class="project-icon" aria-hidden="true">
                 <i class="fas" [ngClass]="{
                     'fa-table-tennis': project.assetClass === 'asset-ppp',
                     'fa-calendar-check': project.assetClass === 'asset-event',
@@ -26,26 +16,21 @@
                     'fa-sign-language': project.assetClass === 'asset-ican'
                 }"></i>
             </div>
+            <h3 class="project-title-text">{{ project.title }}</h3>
+            <span class="project-subtitle-text">{{ project.subtitle }}</span>
+
+            <p class="project-desc-text">{{ project.description[0] }}</p>
+            <ul class="bullet-grid">
+                <li class="bullet-item" *ngFor="let bullet of project.description.slice(1)">{{ bullet }}</li>
+            </ul>
 
             <div class="project-tags">
                 <span class="tag" *ngFor="let t of project.tech">{{ t }}</span>
             </div>
-        </div>
 
-        <div class="project-body">
-            <div class="project-desc-col">
-                <p class="project-desc-text">{{ project.description[0] }}</p>
-                <div class="bullet-grid">
-                    <div class="bullet-item" *ngFor="let bullet of project.description.slice(1)">
-                        <span>{{ bullet }}</span>
-                    </div>
-                </div>
-            </div>
-            <div class="project-cta-col">
-                <button class="icon-btn" (click)="openLink(project.link)">
-                    Explore <i class="fas fa-arrow-right"></i>
-                </button>
-            </div>
-        </div>
+            <button *ngIf="project.link" class="learn-more" (click)="openLink(project.link)">
+                Learn more <i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </button>
+        </article>
     </div>
 </section>

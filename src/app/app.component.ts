@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ThreeBackgroundComponent } from './components/three-background/three-background.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { SkillsComponent } from './components/skills/skills.component';
@@ -10,7 +9,6 @@ import { ContactComponent } from './components/contact/contact.component';
     selector: 'app-root',
     standalone: true,
     imports: [
-        ThreeBackgroundComponent,
         NavbarComponent,
         HeroComponent,
         SkillsComponent,
