@@ -6,8 +6,8 @@ interface Project {
     subtitle: string;
     description: string[];
     tech: string[];
+    icon: string;
     link?: string;
-    assetClass: string;
 }
 
 @Component({
@@ -22,84 +22,81 @@ export class ProjectsComponent {
     projects: Project[] = [
         {
             title: 'Play–Pause–Post (PPP)',
-            subtitle: 'AI Sports Replay & Analytics Platform',
+            subtitle: 'AI sports replay & analytics platform',
             description: [
-                'Production-grade sports analytics and decision-support platform for badminton and racket sports.',
-                'Implemented live ball and shuttle tracking systems with continuous model tuning.',
-                'Deployed TrackNet-based tracking with 90%+ accuracy and integrated paddle detection.',
-                'Optimized inference pipelines for iOS/CoreML and GPU execution for low-latency replays.'
+                'Production AI platform for badminton and racket-sport analytics, replay generation and automated officiating.',
+                'CV pipelines for shuttle/ball and player tracking, pose estimation, court mapping, bounce detection and trajectory analysis.',
+                'Person Re-ID, rally detection, scoring logic and automated line calling.',
+                'Multi-venue streaming to a central server with S3 storage; shot speed (km/h) from court calibration.',
+                'GPU acceleration and quantization for Android and smartwatch apps.'
             ],
-            tech: ['TrackNet', 'CoreML', 'OpenCV', 'GPU Optimization'],
-            link: 'https://play.google.com/store/apps/details?id=com.vtpl.volley&hl=en',
-            assetClass: 'asset-ppp'
+            tech: ['Object Tracking', 'Pose Estimation', 'Re-ID', 'Quantization', 'S3'],
+            icon: 'fa-table-tennis',
+            link: 'https://play.google.com/store/apps/details?id=com.vtpl.volley&hl=en'
+        },
+        {
+            title: 'CCTV Vision',
+            subtitle: 'Video surveillance & workforce analytics',
+            description: [
+                'Scalable multi-camera AI system for identity tracking, security, attendance and workforce analytics.',
+                'Face recognition, person detection, multi-object tracking and Re-ID for cross-camera identity.',
+                'Real-time multi-stream ingestion with RTSP, GStreamer and GPU inference.',
+                'ANPR for vehicle entry/exit logging; attendance, headcount, dwell-time and heatmap analytics.'
+            ],
+            tech: ['RTSP', 'GStreamer', 'Face Recognition', 'ANPR', 'GPU Inference'],
+            icon: 'fa-video'
+        },
+        {
+            title: 'RetailVision AI',
+            subtitle: 'Retail computer vision analytics',
+            description: [
+                'Enterprise video analytics for store operations, workforce productivity and customer behaviour.',
+                'Queue management, cashier monitoring and customer-staff interaction analytics using tracking, Re-ID and pose analysis.',
+                'Real-time occupancy counting with line-crossing and live modes.',
+                'Shelf monitoring and crowd-density insights via dashboards, alerts and heatmaps.'
+            ],
+            tech: ['Tracking', 'Re-ID', 'Pose Analysis', 'Heatmaps'],
+            icon: 'fa-store'
         },
         {
             title: 'V-Commute',
-            subtitle: 'Enterprise Commute Tracking Platform',
+            subtitle: 'Enterprise mobility & attendance',
             description: [
-                'Employee commute tracking, attendance, and travel allowance management.',
-                'Implemented geofenced real-time tracking with background execution optimization.',
-                'Integrated biometric and face-based authentication with 99%+ accuracy.',
-                'Developed lightweight on-device models for low-connectivity environments.'
+                'Android platform for employee commute tracking, geofenced attendance and travel allowance.',
+                'Geofencing, GPS tracking and attendance workflows.',
+                'Face authentication with anti-spoofing using lightweight on-device AI.',
+                'Background processing, local persistence and sync for low-connectivity use.'
             ],
-            tech: ['Geofencing', 'Biometrics', 'On-device ML', 'Android'],
-            link: 'https://play.google.com/store/apps/details?id=com.vcommute.traveltracking&hl=en',
-            assetClass: 'asset-commute'
+            tech: ['Android', 'Geofencing', 'On-device AI', 'Anti-spoofing'],
+            icon: 'fa-bus',
+            link: 'https://play.google.com/store/apps/details?id=com.vcommute.traveltracking&hl=en'
         },
         {
-            title: 'V-Fleet',
-            subtitle: 'Fleet & Vehicle Operations Management',
+            title: 'V-Fleet, V-Asset & iCan',
+            subtitle: 'Enterprise Android suite',
             description: [
-                'Enterprise fleet and vehicle operations management platform.',
-                'Built an offline-first architecture to support uninterrupted fleet operations.',
-                'Implemented secure backend synchronization for vehicle, trip, and usage data.',
-                'Designed scalable data workflows for fleet monitoring and reporting.'
+                'Production Android apps for fleet management, asset tracking and accessibility.',
+                'Offline-first architectures with secure authentication, local persistence and sync.',
+                'QR/barcode scanning, location tracking, speech-to-text and text-to-speech.'
             ],
-            tech: ['Offline-first', 'Data Sync', 'Fleet Management', 'Android'],
-            link: 'https://play.google.com/store/apps/details?id=com.vareli.fleet&hl=en',
-            assetClass: 'asset-fleet'
+            tech: ['Kotlin', 'Jetpack Compose', 'Offline-first', 'MVVM'],
+            icon: 'fa-truck',
+            link: 'https://play.google.com/store/apps/details?id=com.vareli.fleet&hl=en'
         },
         {
-            title: 'Event Management',
-            subtitle: 'Enterprise Event Logistics & Tracking',
+            title: 'Few-Shot Fraud Detection',
+            subtitle: 'M.Tech thesis · Jadavpur University (ongoing)',
             description: [
-                'Comprehensive solution for corporate event planning and execution.',
-                'Real-time attendee tracking and session management.',
-                'Integrated QR-based check-in and digital certification delivery.',
-                'Scalable backend for multi-track event synchronization.'
+                'Few-shot learning framework to detect fraud on new credit card accounts with little transaction history.',
+                'Combines population-level behavioural priors with prototype-based embeddings.',
+                'Evaluated on IEEE-CIS with simulated cold-start scenarios, using AUC-PR for imbalanced data.'
             ],
-            tech: ['Event Tech', 'QR Systems', 'Real-time Sync', 'Android'],
-            link: 'https://play.google.com/store/apps/details?id=com.vareli.v_event_management&hl=en',
-            assetClass: 'asset-event'
-        },
-        {
-            title: 'V-Asset',
-            subtitle: 'Secure Asset Lifecycle Management',
-            description: [
-                'Enterprise solution for secure asset lifecycle and inventory management.',
-                'Integrated QR and barcode scanning using ML Kit for rapid identification.',
-                'Implemented audit trails and asset history tracking for compliance.',
-                'JWT-based authentication with role-based access control.'
-            ],
-            tech: ['ML Kit', 'QR/Barcode', 'JWT', 'Inventory'],
-            link: 'https://play.google.com/store/apps/details?id=com.vareli.vasset',
-            assetClass: 'asset-vasset'
-        },
-        {
-            title: 'iCan',
-            subtitle: 'Accessibility-focused Android Application',
-            description: [
-                'Designed for deaf users to support visual learning through sign-language storytelling.',
-                'Integrated speech-to-text and text-to-speech for two-way communication.',
-                'Led a cross-functional team of 4 developers from design through delivery.'
-            ],
-            tech: ['Accessibility', 'STT/TTS', 'Sign Language', 'Media'],
-            link: 'https://play.google.com/store/apps/details?id=com.ican.app',
-            assetClass: 'asset-ican'
+            tech: ['Few-shot Learning', 'PyTorch', 'Embeddings', 'AUC-PR'],
+            icon: 'fa-flask'
         }
     ];
 
     openLink(url?: string) {
-        if (url) window.open(url, '_blank');
+        if (url) window.open(url, '_blank', 'noopener');
     }
 }

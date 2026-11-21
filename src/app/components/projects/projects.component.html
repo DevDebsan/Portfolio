@@ -7,14 +7,7 @@
     <div class="project-grid">
         <article class="project-item" *ngFor="let project of projects">
             <div class="project-icon" aria-hidden="true">
-                <i class="fas" [ngClass]="{
-                    'fa-table-tennis': project.assetClass === 'asset-ppp',
-                    'fa-calendar-check': project.assetClass === 'asset-event',
-                    'fa-bus': project.assetClass === 'asset-commute',
-                    'fa-truck': project.assetClass === 'asset-fleet',
-                    'fa-boxes': project.assetClass === 'asset-vasset',
-                    'fa-sign-language': project.assetClass === 'asset-ican'
-                }"></i>
+                <i class="fas" [ngClass]="project.icon"></i>
             </div>
             <h3 class="project-title-text">{{ project.title }}</h3>
             <span class="project-subtitle-text">{{ project.subtitle }}</span>
