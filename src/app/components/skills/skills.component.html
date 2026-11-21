@@ -1,16 +1,14 @@
-<section id="skills" class="proof-section bg-light">
+<section id="skills" class="proof-section grouped">
     <div class="container">
         <div class="section-heading">
-            <span class="eyebrow">Skills</span>
-            <h2>What I work with.</h2>
+            <h2>Skills.</h2>
+            <p>From model training to deployment on the device in your hand.</p>
         </div>
-        <div class="skills-grid">
-            <article class="skill-block" *ngFor="let item of capabilities">
-                <h3 class="skill-category">{{ item.category }}</h3>
-                <ul class="skill-list">
-                    <li *ngFor="let skill of item.skills">{{ skill }}</li>
-                </ul>
-            </article>
-        </div>
+        <dl class="skill-group">
+            <div class="skill-row" *ngFor="let item of capabilities">
+                <dt class="skill-category">{{ item.category }}</dt>
+                <dd class="skill-list">{{ item.skills.join(' · ') }}</dd>
+            </div>
+        </dl>
     </div>
 </section>

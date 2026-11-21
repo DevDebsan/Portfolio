@@ -1,34 +1,57 @@
 <section id="about" class="container hero-section">
     <div class="hero-primary">
-        <div class="status-indicator"><span class="dot" aria-hidden="true"></span>Currently at Vareli Tecnac</div>
-        <h1 class="hero-title">Computer vision<br><span>that ships.</span></h1>
+        <p class="status-indicator"><span class="dot" aria-hidden="true"></span>Senior AI/ML Developer at Vareli Tecnac</p>
+        <h1 class="hero-title">Computer vision that runs in real time.</h1>
         <p class="hero-lead">
-            Senior AI/ML developer with 3.9 years of experience turning <strong>computer vision research</strong>
-            into products that run in real time on live video, from GPU servers to mobile and edge devices.
+            I turn computer vision research into products that work on live video, from GPU servers to
+            phones and edge devices. Detection, tracking, Re-ID and on-device AI, shipped to the Play Store.
         </p>
         <div class="hero-actions">
             <button class="btn btn-primary" (click)="openResume()">View Résumé</button>
-            <button class="btn btn-secondary" (click)="scrollToContact()">Get in touch</button>
+            <a class="btn btn-secondary" href="#contact">Get in touch</a>
+        </div>
+        <div class="person">
+            <img src="assets/profile-pic.jpg" alt="" class="avatar" onerror="this.style.display='none'">
+            <p>Debdeep Sanyal · Kolkata, India<br>3.9 years · leads a team of 9+ · M.Tech (AI &amp; DS)</p>
         </div>
     </div>
 
-    <aside class="snapshot-card" aria-label="Profile summary">
-        <div class="profile-summary">
-            <img src="assets/profile-pic.jpg" alt="Portrait of Debdeep Sanyal" class="sidebar-avatar"
-                onerror="this.src='assets/fallback_avatar.png'">
-            <div class="profile-info">
-                <h4 class="name">Debdeep Sanyal</h4>
-                <span class="role">Senior AI/ML Developer</span>
-            </div>
-        </div>
-        <dl class="snapshot-inner">
-            <div class="snapshot-row"><dt>Domain</dt><dd>Computer Vision · Edge AI · Android</dd></div>
-            <div class="snapshot-row"><dt>Education</dt><dd>M.Tech, AI &amp; Data Science</dd></div>
-            <div class="snapshot-row"><dt>Experience</dt><dd>3.9 years professional</dd></div>
-        </dl>
-        <div class="social-links-sidebar">
-            <a href="https://www.linkedin.com/in/debdeep-sanyal/" target="_blank" rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
-            <a href="mailto:sanyaldebdeep@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i> Email</a>
-        </div>
-    </aside>
+    <figure class="scene">
+        <svg viewBox="0 0 360 440" role="img"
+            aria-label="Top-down badminton court with two detected players and the tracked flight path of a shuttle">
+            <g class="court" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
+                <rect x="30" y="20" width="300" height="400" rx="6" />
+                <path d="M50 20V420M310 20V420M30 48H330M30 392H330M30 180H330M30 260H330M180 20V180M180 260V420" />
+                <path d="M24 220H336" stroke-width="3" />
+            </g>
+
+            <g class="player">
+                <rect class="box" x="82" y="64" width="56" height="88" rx="6" />
+                <circle cx="110" cy="92" r="9" class="body" />
+                <rect x="98" y="104" width="24" height="38" rx="10" class="body" />
+                <rect class="chip" x="82" y="44" width="30" height="20" rx="5" />
+                <text class="chip-text" x="97" y="58" text-anchor="middle">P1</text>
+            </g>
+
+            <g class="player">
+                <rect class="box" x="226" y="298" width="56" height="88" rx="6" />
+                <circle cx="254" cy="326" r="9" class="body" />
+                <rect x="242" y="338" width="24" height="38" rx="10" class="body" />
+                <rect class="chip" x="252" y="278" width="30" height="20" rx="5" />
+                <text class="chip-text" x="267" y="292" text-anchor="middle">P2</text>
+            </g>
+
+            <path class="trail" pathLength="1" d="M236 322C250 200 190 120 130 92" />
+            <g class="trail-dots">
+                <circle cx="236" cy="254" r="3" opacity="0.35" />
+                <circle cx="222" cy="196" r="3.5" opacity="0.5" />
+                <circle cx="197" cy="150" r="4" opacity="0.7" />
+                <circle cx="165" cy="115" r="4.5" opacity="0.85" />
+            </g>
+            <circle class="shuttle" cx="130" cy="92" r="6" />
+            <rect class="tag" x="236" y="170" width="52" height="22" rx="6" />
+            <text class="tag-text" x="262" y="185" text-anchor="middle">shuttle</text>
+        </svg>
+        <figcaption>Illustration: the kind of tracking pipeline behind Play–Pause–Post.</figcaption>
+    </figure>
 </section>

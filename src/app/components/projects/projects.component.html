@@ -1,29 +1,30 @@
 <section id="projects" class="container work-section">
     <div class="section-heading">
-        <span class="eyebrow">Work</span>
-        <h2>Selected projects.</h2>
+        <h2>Selected work.</h2>
+        <p>Production systems for sports, security, retail and enterprise mobility, plus the research behind them.</p>
     </div>
 
     <div class="project-grid">
-        <article class="project-item" *ngFor="let project of projects">
-            <div class="project-icon" aria-hidden="true">
-                <i class="fas" [ngClass]="project.icon"></i>
-            </div>
+        <article class="project-item" *ngFor="let project of projects; let first = first" [class.featured]="first">
+            <div class="project-icon" aria-hidden="true"><i class="fas" [ngClass]="project.icon"></i></div>
             <h3 class="project-title-text">{{ project.title }}</h3>
-            <span class="project-subtitle-text">{{ project.subtitle }}</span>
-
+            <p class="project-subtitle-text">{{ project.subtitle }}</p>
             <p class="project-desc-text">{{ project.description[0] }}</p>
-            <ul class="bullet-grid">
-                <li class="bullet-item" *ngFor="let bullet of project.description.slice(1)">{{ bullet }}</li>
+
+            <details class="more">
+                <summary>What I built</summary>
+                <ul class="bullet-grid">
+                    <li class="bullet-item" *ngFor="let bullet of project.description.slice(1)">{{ bullet }}</li>
+                </ul>
+            </details>
+
+            <ul class="project-tags" aria-label="Technologies">
+                <li class="tag" *ngFor="let t of project.tech">{{ t }}</li>
             </ul>
 
-            <div class="project-tags">
-                <span class="tag" *ngFor="let t of project.tech">{{ t }}</span>
-            </div>
-
-            <button *ngIf="project.link" class="learn-more" (click)="openLink(project.link)">
-                Learn more <i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </button>
+            <a *ngIf="project.link" class="store-link" [href]="project.link" target="_blank" rel="noopener">
+                Get it on Google Play <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </a>
         </article>
     </div>
 </section>

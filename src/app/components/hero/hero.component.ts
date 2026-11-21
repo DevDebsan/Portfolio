@@ -1,5 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
-import gsap from 'gsap';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-hero',
@@ -7,24 +6,8 @@ import gsap from 'gsap';
     templateUrl: './hero.component.html',
     styleUrls: ['./hero.css']
 })
-export class HeroComponent implements AfterViewInit {
-
-    ngAfterViewInit() {
-        gsap.from(".hero-anim", {
-            duration: 1.2,
-            y: 30,
-            opacity: 0,
-            ease: "power3.out",
-            stagger: 0.15
-        });
-    }
-
+export class HeroComponent {
     openResume() {
-        window.open('./assets/cv.pdf', '_blank');
-    }
-
-    scrollToContact() {
-        const el = document.getElementById('contact');
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        window.open('./assets/cv.pdf', '_blank', 'noopener');
     }
 }

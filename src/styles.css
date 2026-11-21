@@ -1,91 +1,102 @@
-/* APPLE-INSPIRED DESIGN SYSTEM
-   Follows Apple HIG: system typeface, semantic colours that adapt to light/dark,
-   translucent materials for bars, generous spacing, 44pt tap targets, reduced-motion support. */
+/* DESIGN TOKENS
+   Roles: surface (page), grouped (inset areas), label (text), accent (actions/links only),
+   signal (detections: the one place colour is spent). Contrast is >= 4.5:1 for every pair.
+   Light/dark follow the system; no in-app switch. */
 
 :root {
   color-scheme: light dark;
   --bg: #ffffff;
-  --bg-grouped: #f5f5f7;
+  --grouped: #f5f5f7;
   --surface: #ffffff;
   --label: #1d1d1f;
-  --label-secondary: #6e6e73;
+  --label-2: #6e6e73;          /* 5.07:1 on bg, 4.66:1 on grouped */
   --separator: rgba(0, 0, 0, 0.12);
-  --accent: #0066cc;
-  --accent-fill: #0071e3;
+  --accent: #0066cc;           /* 5.57:1 on bg */
+  --accent-fill: #0071e3;      /* white text 4.7:1 */
   --on-accent: #ffffff;
+  --signal: #1a7f37;           /* 5.08:1 on bg */
+  --on-signal: #ffffff;
   --material: rgba(255, 255, 255, 0.72);
-  --shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.06);
-  --radius-lg: 24px;
-  --radius-md: 16px;
-  --content-width: 1080px;
+  --radius: 22px;
+  --width: 1080px;
   --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI Variable', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #000000;
-    --bg-grouped: #1c1c1e;
+    --grouped: #1c1c1e;
     --surface: #1c1c1e;
     --label: #f5f5f7;
-    --label-secondary: #a1a1a6;
+    --label-2: #a1a1a6;        /* 8.16:1 on bg, 6.61:1 on grouped */
     --separator: rgba(255, 255, 255, 0.16);
-    --accent: #2997ff;
+    --accent: #2997ff;         /* 6.96:1 on bg */
     --accent-fill: #0a84ff;
+    --signal: #30d158;         /* 10.39:1 on bg */
+    --on-signal: #000000;
     --material: rgba(29, 29, 31, 0.72);
-    --shadow: none;
   }
+}
+
+@media (prefers-contrast: more) {
+  :root { --label-2: var(--label); --separator: currentColor; }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  :root { --material: var(--bg); }
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; -webkit-text-size-adjust: 100%; }
 
 body {
   font-family: var(--font);
-  font-size: 1.0625rem;
+  font-size: 1.0625rem;          /* 17px default body */
   line-height: 1.47;
   letter-spacing: -0.011em;
   background: var(--bg);
   color: var(--label);
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
 }
 
-section, footer { padding: 6rem 0; }
-.bg-light { background: var(--bg-grouped); }
+.container { width: 100%; max-width: var(--width); margin: 0 auto; padding: 0 1.5rem; }
+section, footer { padding: 6.5rem 0; }
+.grouped { background: var(--grouped); }
 
-.container {
-  width: 100%;
-  max-width: var(--content-width);
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-h1, h2, h3, h4 { color: var(--label); font-weight: 600; letter-spacing: -0.02em; }
-h1 { font-size: clamp(2.5rem, 7vw, 4.5rem); line-height: 1.05; letter-spacing: -0.03em; font-weight: 700; }
-h2 { font-size: clamp(1.9rem, 4vw, 2.75rem); line-height: 1.1; margin-bottom: 0.5rem; }
-h3 { font-size: 1.3125rem; line-height: 1.25; }
-h4 { font-size: 1.0625rem; }
-p { color: var(--label-secondary); }
+h1, h2, h3, h4 { color: var(--label); font-weight: 700; letter-spacing: -0.025em; }
+h1 { font-size: clamp(2.5rem, 7vw, 4.25rem); line-height: 1.05; letter-spacing: -0.035em; }
+h2 { font-size: clamp(1.9rem, 4.2vw, 2.75rem); line-height: 1.1; }
+h3 { font-size: 1.3125rem; line-height: 1.25; font-weight: 600; }
+h4 { font-size: 1.0625rem; font-weight: 600; }
+p { color: var(--label-2); }
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-.section-heading { margin-bottom: 3rem; }
-.section-heading .eyebrow { display: block; font-size: 0.875rem; font-weight: 600; color: var(--label-secondary); margin-bottom: 0.5rem; }
+.section-heading { margin-bottom: 3rem; max-width: 36rem; }
+.section-heading p { margin-top: 0.75rem; font-size: 1.1875rem; }
 
-:focus-visible { outline: 3px solid var(--accent-fill); outline-offset: 3px; border-radius: 8px; }
+:focus-visible { outline: 3px solid var(--accent-fill); outline-offset: 3px; border-radius: 6px; }
+
+.skip-link {
+  position: absolute; left: 1rem; top: -4rem; z-index: 2000;
+  background: var(--accent-fill); color: var(--on-accent); padding: 0.6rem 1rem; border-radius: 10px;
+}
+.skip-link:focus { top: 0.75rem; text-decoration: none; }
 
 .btn {
-  display: inline-flex; align-items: center; justify-content: center;
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
   min-height: 44px; padding: 0 1.5rem; border-radius: 980px;
   font: inherit; font-weight: 500; cursor: pointer; border: 1px solid transparent;
-  transition: background-color 0.2s, transform 0.2s;
+  transition: background-color 0.2s, transform 0.15s;
 }
+.btn:hover { text-decoration: none; }
 .btn:active { transform: scale(0.97); }
 .btn-primary { background: var(--accent-fill); color: var(--on-accent); }
-.btn-primary:hover { background: var(--accent); }
+.btn-primary:hover { filter: brightness(0.92); }
 .btn-secondary { background: transparent; color: var(--accent); border-color: var(--accent); }
-.btn-secondary:hover { background: var(--bg-grouped); }
+.btn-secondary:hover { background: var(--grouped); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
